@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open https://itsfornotifs.github.io/sharetext/</title>
+</head>
+<body>
+
+<button onclick="openExample()">Open example.com</button>
+
+<script>
+    function openExample() {
+        // Check if the browser supports the Web Share API
+        if (navigator.share) {
+            // Use the Web Share API to open the URL
+            navigator.share({
+                url: 'https://itsfornotifs.github.io/sharetext/',
+            })
+            .then(() => console.log('Shared successfully'))
+            .catch((error) => console.error('Error sharing:', error));
+        } else {
+            // Fallback for browsers that do not support the Web Share API
+            // You can customize this behavior based on your requirements
+            window.location.href = 'https://itsfornotifs.github.io/sharetext/';
+        }
+    }
+</script>
+
+</body>
+</html>
